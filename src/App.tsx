@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>bithc</h1>
+      <h1>DANIEL ICHIRO PUTRA TEGUH SETIAWAN</h1>
       <p>halo</p>
     </div>
   );
