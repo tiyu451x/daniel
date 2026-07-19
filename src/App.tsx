@@ -1,10 +1,10 @@
 function App() {
   return (
     <div>
-      <h1>BITCH</h1>
-      <p>This is my first React + TypeScript website!</p>
+      <h1>bithc</h1>
+      <p>halo</p>
     </div>
   );
 }
 
-export default App;
+export default App; 
