@@ -1,8 +1,8 @@
 function App() {
   return (
     <div>
-      <h1>HI12345</h1>
-      <p>PAK BRILLIAN SMAN ! KOtA MADIUN DENGAN MENGERJAKAN TUGAS OPSI MEMBUAt TUGAS</p>
+      <h1>halo</h1>
+      <p>halo</p>
     </div>
   );
 }
