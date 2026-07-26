@@ -29,7 +29,7 @@ export class Enemy extends Phaser.Physics.Arcade.Sprite {
     const bulletsInRing = 10;
     for (let i = 0; i < bulletsInRing; i++) {
       const angle = Phaser.Math.DegToRad((i * (360 / bulletsInRing)) + this.angleOffset);
-      const speed = 135;
+      const speed = 50;
       const vx = Math.cos(angle) * speed;
       const vy = Math.sin(angle) * speed;
 

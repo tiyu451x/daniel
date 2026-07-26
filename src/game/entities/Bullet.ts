@@ -1,28 +1,23 @@
 import Phaser from 'phaser';
 
 export class Bullet extends Phaser.Physics.Arcade.Sprite {
-  private fired = false;
-
-  constructor(scene: Phaser.Scene, x: number, y: number, texture = 'player-bullet') {
+  constructor(scene: Phaser.Scene, x: number, y: number, texture: string) {
     super(scene, x, y, texture);
   }
 
   fire(x: number, y: number, velocityX: number, velocityY: number) {
-    this.fired = true;
-    this.enableBody(true, x, y, true, true);
+    this.body?.reset(x, y);
+    this.setActive(true);
+    this.setVisible(true);
     this.setVelocity(velocityX, velocityY);
-    this.setRotation(Math.atan2(velocityY, velocityX) + Math.PI / 2);
   }
 
   preUpdate(time: number, delta: number) {
     super.preUpdate(time, delta);
-
-    if (!this.active) {
-      return;
-    }
-
-    if (!this.fired || this.x < -40 || this.x > 640 || this.y < -40 || this.y > 840) {
-      this.disableBody(true, true);
+    // Deactivate when leaving the canvas bounds (600x800 resolution)
+    if (this.y < -20 || this.y > 820 || this.x < -20 || this.x > 620) {
+      this.setActive(false);
+      this.setVisible(false);
     }
   }
 }
