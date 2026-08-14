@@ -5,16 +5,18 @@ import { StartGame } from './game/Game';
 import './index.css';
 
 /**
+ * ============================================================
  * main.tsx
- *
+ * ============================================================
+ * WHAT THIS FILE DOES:
  * React entry point. Mounts a <div id="game-container"> and boots
- * Phaser into it on mount, cleaning up on unmount.
+ * Phaser into it, cleaning up the game instance on unmount.
  *
- * NOTE: If your project already has its own App.tsx with routing
- * (I saw pages/GamePage.tsx, LoginPage.tsx etc. in your file tree),
- * move the <div id="game-container"> + useEffect logic below into
- * GamePage.tsx instead of rendering it directly here, so the game
- * only mounts on that route.
+ * NOTE: If your project already has routing (I saw pages/GamePage.tsx
+ * in your file tree earlier), move the <div id="game-container">
+ * + useEffect logic below into GamePage.tsx instead, so the game
+ * only mounts on that specific route rather than on every page load.
+ * ============================================================
  */
 function App() {
   const gameRef = useRef<Phaser.Game | null>(null);
@@ -23,7 +25,6 @@ function App() {
     if (!gameRef.current) {
       gameRef.current = StartGame('game-container');
     }
-
     return () => {
       gameRef.current?.destroy(true);
       gameRef.current = null;

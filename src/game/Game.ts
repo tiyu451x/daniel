@@ -2,11 +2,16 @@ import Phaser from 'phaser';
 import { gameConfig } from './Config';
 
 /**
+ * ============================================================
  * Game.ts
+ * ============================================================
+ * WHAT THIS FILE DOES:
+ * Creates the actual Phaser.Game instance using the config from
+ * Config.ts. Call StartGame() once from your React entry point.
  *
- * Creates the Phaser game instance. Call StartGame() once from
- * your React entry point (main.tsx), passing the id of the DOM
- * element Phaser should render into.
+ * WHAT YOU CAN CUSTOMIZE:
+ * Nothing needed here. Configuration changes belong in Config.ts.
+ * ============================================================
  */
 export const StartGame = (parentElementId: string): Phaser.Game => {
   return new Phaser.Game({ ...gameConfig, parent: parentElementId });

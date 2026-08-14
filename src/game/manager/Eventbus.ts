@@ -1,16 +1,22 @@
 import { Events } from 'phaser';
 
 /**
+ * ============================================================
  * EventBus.ts
+ * ============================================================
+ * WHAT THIS FILE DOES:
+ * A shared "walkie-talkie" that lets React components and Phaser
+ * scenes talk to each other, since they normally can't see each
+ * other directly.
  *
- * Shared event emitter used to communicate between React components
- * and Phaser scenes. Import this in both your .tsx files and your
- * Phaser scenes/entities.
+ * HOW TO USE IT (you likely won't need to touch this file):
+ *   Inside a scene:   EventBus.emit('some-event', data);
+ *   Inside React:      EventBus.on('some-event', (data) => {...});
  *
- * Example (inside a scene):
- *   EventBus.emit('current-scene-ready', this);
- *
- * Example (inside a React component):
- *   EventBus.on('current-scene-ready', (scene) => { ... });
+ * WHAT YOU CAN CUSTOMIZE:
+ * Nothing needed here for the card game to work. You'd only touch
+ * this if you want to add new events, e.g. EventBus.emit('score-changed', 5)
+ * to update a React scoreboard outside the Phaser canvas.
+ * ============================================================
  */
 export const EventBus = new Events.EventEmitter();

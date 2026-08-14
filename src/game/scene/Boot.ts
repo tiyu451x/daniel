@@ -1,11 +1,18 @@
 import Phaser from 'phaser';
 
 /**
+ * ============================================================
  * Boot.ts
+ * ============================================================
+ * WHAT THIS FILE DOES:
+ * The very first scene Phaser runs. Keep it tiny — only load
+ * assets the Preload scene's own UI needs (like a logo), then
+ * hand off. All real game assets load in Preload.ts.
  *
- * The very first scene Phaser runs. Keep this tiny — just load
- * whatever tiny assets Preload's loading bar itself needs (if any),
- * then move on. All real game assets load in Preload.ts.
+ * WHAT YOU CAN CUSTOMIZE:
+ * Usually nothing. If you add a splash logo, load it in preload()
+ * here and display it in create() before starting Preload.
+ * ============================================================
  */
 export class Boot extends Phaser.Scene {
   constructor() {
@@ -13,8 +20,7 @@ export class Boot extends Phaser.Scene {
   }
 
   preload(): void {
-    // Load only assets needed for the Preload scene's UI (e.g. a logo
-    // or loading-bar background). Leave empty if you don't need one.
+    // Optional: load a tiny logo/splash image here if you want one.
   }
 
   create(): void {
