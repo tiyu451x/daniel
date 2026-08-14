@@ -6,3 +6,13 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Player {
+  id           Int    @id @default(autoincrement())
+  username     String @unique
+  passwordHash String
+
+  level        Int    @default(1)
+  exp          Int    @default(0)
+  coins        Int    @default(0)
+}
